@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Paleta de cores da marca COCOS — terra, folha, sol e estados de alerta.
+/// Paleta de cores da marca COCOS: terra, folha, sol e estados de alerta.
 class AppColors {
   AppColors._();
 

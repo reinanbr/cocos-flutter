@@ -1,4 +1,4 @@
-/// Parâmetros de solo que o COCOS analisa — todos mensuráveis a campo,
+/// Parâmetros de solo que o COCOS analisa, todos mensuráveis a campo,
 /// na roça, com instrumentos simples (medidor de pH, sonda de umidade/
 /// temperatura, condutivímetro de bolso ou o teste de textura pelo tato).
 enum ParamKey { ph, condutividade, salinidade, umidade, temperatura, textura }

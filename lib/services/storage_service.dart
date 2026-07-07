@@ -6,7 +6,7 @@ import 'package:uuid/uuid.dart';
 import '../models/historico_entry.dart';
 import '../models/resultado.dart';
 
-/// Persistência local (histórico e relatórios) — o COCOS funciona 100%
+/// Persistência local (histórico e relatórios). O COCOS funciona 100%
 /// offline, então tudo fica salvo apenas no dispositivo do usuário.
 class StorageService {
   StorageService._();

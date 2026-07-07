@@ -27,7 +27,7 @@ class ManualScreen extends StatelessWidget {
                 SizedBox(height: 8),
                 Text(
                   'O COCOS trabalha apenas com parâmetros que você mesmo consegue medir no campo, '
-                  'com instrumentos simples e baratos — sem precisar mandar amostra para laboratório. '
+                  'com instrumentos simples e baratos, sem precisar mandar amostra para laboratório. '
                   'Abaixo está o passo a passo de coleta de cada um.',
                   style: TextStyle(fontSize: 13, color: AppColors.textoSec, height: 1.5),
                 ),

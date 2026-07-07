@@ -14,7 +14,7 @@ class ManualParam {
   });
 }
 
-/// Passo a passo de coleta a campo para cada parâmetro — pensado para quem
+/// Passo a passo de coleta a campo para cada parâmetro. Pensado para quem
 /// está na roça, sem acesso a laboratório, usando instrumentos simples e baratos.
 final List<ManualParam> kManual = [
   ManualParam(
@@ -33,7 +33,7 @@ final List<ManualParam> kManual = [
       'Insira o eletrodo do medidor na pasta ou no solo úmido e aguarde 30–60 segundos até o valor estabilizar.',
       'Anote o valor de cada ponto. Se possível, lance todos os valores na tela "Série de Valores" para ver a média e a variação do talhão.',
     ],
-    dica: 'Evite medir logo após calagem ou adubação — espere de 30 a 60 dias para o solo estabilizar. '
+    dica: 'Evite medir logo após calagem ou adubação, espere de 30 a 60 dias para o solo estabilizar. '
         'O solo não deve estar nem seco (rachado) nem encharcado.',
   ),
   ManualParam(
@@ -62,7 +62,7 @@ final List<ManualParam> kManual = [
     ],
     passos: [
       'Repita o mesmo preparo da Condutividade Elétrica: misture solo e água destilada (1:1 ou 1:2), agite e deixe decantar 30 minutos.',
-      'Troque o medidor para o modo salinidade/TDS (g/L ou ppm) — a maioria dos condutivímetros de bolso tem os dois modos.',
+      'Troque o medidor para o modo salinidade/TDS (g/L ou ppm): a maioria dos condutivímetros de bolso tem os dois modos.',
       'Mergulhe a sonda no sobrenadante e aguarde a leitura estabilizar.',
       'Anote o valor. Se o aparelho mostrar em ppm, divida por 1000 para converter para g/L.',
     ],
@@ -79,7 +79,7 @@ final List<ManualParam> kManual = [
       'Aguarde alguns segundos até o ponteiro ou mostrador estabilizar.',
       'Anote o valor em % e repita em vários pontos do talhão.',
     ],
-    dica: 'Evite medir logo após chuva ou irrigação forte — espere algumas horas para a leitura refletir a '
+    dica: 'Evite medir logo após chuva ou irrigação forte, espere algumas horas para a leitura refletir a '
         'umidade real de manejo, e não um pico passageiro.',
   ),
   ManualParam(
@@ -93,13 +93,13 @@ final List<ManualParam> kManual = [
       'Aguarde 1–2 minutos até a leitura estabilizar.',
       'Anote o valor em °C. Sempre que possível, meça no mesmo horário do dia para poder comparar entre datas diferentes.',
     ],
-    dica: 'A temperatura do solo varia bastante ao longo do dia — meça sempre por volta do mesmo horário '
+    dica: 'A temperatura do solo varia bastante ao longo do dia, meça sempre por volta do mesmo horário '
         '(ex: sempre às 9h) para acompanhar a evolução real.',
   ),
   ManualParam(
     key: ParamKey.textura,
     materiais: [
-      'Nenhum instrumento — apenas as mãos (teste manual do tato)',
+      'Nenhum instrumento, apenas as mãos (teste manual do tato)',
       'Um pouco de água para umedecer o solo',
     ],
     passos: [
@@ -112,7 +112,7 @@ final List<ManualParam> kManual = [
       'Fita com mais de 5 cm, brilhante e bem plástica → solo argiloso (~40–60% ou mais de argila).',
       'Anote a estimativa percentual de argila correspondente à faixa observada.',
     ],
-    dica: 'É um teste de estimativa, não substitui uma análise granulométrica de laboratório — mas é '
+    dica: 'É um teste de estimativa, não substitui uma análise granulométrica de laboratório, mas é '
         'suficiente para orientar decisões de manejo no dia a dia.',
   ),
 ];

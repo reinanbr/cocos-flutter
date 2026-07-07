@@ -8,7 +8,7 @@ import '../models/classification.dart';
 import '../models/param_config.dart';
 import '../models/resultado.dart';
 
-/// Motor de classificação e estatísticas do COCOS — roda 100% no dispositivo,
+/// Motor de classificação e estatísticas do COCOS. Roda 100% no dispositivo,
 /// sem depender de servidor, para uso a campo mesmo sem internet.
 class ClassificationService {
   ClassificationService._();
@@ -137,7 +137,7 @@ class ClassificationService {
   }
 
   /// Agrupa os parâmetros de um relatório por severidade e gera o texto-resumo
-  /// (sem emoji — quem exibe decide se prefixa um ícone ou não).
+  /// (sem emoji, quem exibe decide se prefixa um ícone ou não).
   static ({
     String resumo,
     List<RelatorioParam> criticos,

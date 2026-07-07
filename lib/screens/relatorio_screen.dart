@@ -69,7 +69,7 @@ class _RelatorioScreenState extends State<RelatorioScreen> {
       id: StorageService.genId(),
       data: DateTime.now().toIso8601String(),
       tipo: HistoricoTipo.relatorio,
-      titulo: '📋 ${relatorio.titulo} — score ${relatorio.scorePct}%',
+      titulo: '📋 ${relatorio.titulo} · score ${relatorio.scorePct}%',
       paramKey: ParamKey.ph,
       status: scorePct >= 80
           ? ClassificationStatus.otimo
@@ -121,7 +121,7 @@ class _RelatorioScreenState extends State<RelatorioScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _fieldLabel('Título'),
-                  _textInput(_tituloCtrl, 'Ex: Talhão Norte — Safra 2025'),
+                  _textInput(_tituloCtrl, 'Ex: Talhão Norte - Safra 2025'),
                   _fieldLabel('Local / Talhão'),
                   _textInput(_localCtrl, 'Ex: Fazenda São João, Talhão 3'),
                   _fieldLabel('Cultura'),
@@ -168,7 +168,7 @@ class _RelatorioScreenState extends State<RelatorioScreen> {
                   Padding(
                     padding: const EdgeInsets.only(top: 4),
                     child: Text(
-                        '${_cultura.isNotEmpty ? _cultura : "—"} · ${_localCtrl.text.isNotEmpty ? _localCtrl.text : "—"} · ${_preenchidos.length} parâmetro(s) preenchido(s)',
+                        '${_cultura.isNotEmpty ? _cultura : "-"} · ${_localCtrl.text.isNotEmpty ? _localCtrl.text : "-"} · ${_preenchidos.length} parâmetro(s) preenchido(s)',
                         style: const TextStyle(fontSize: 13, color: AppColors.textoSec)),
                   ),
                   TextButton(
@@ -281,7 +281,7 @@ class _RelatorioScreenState extends State<RelatorioScreen> {
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: AppColors.texto),
               decoration: InputDecoration(
-                hintText: '—',
+                hintText: '-',
                 contentPadding: const EdgeInsets.symmetric(vertical: 8),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),

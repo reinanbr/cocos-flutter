@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../constants/colors.dart';
 import '../constants/referencias.dart';
 import '../widgets/app_card.dart';
 import '../widgets/app_scaffold.dart';
 
+const _kContatoEmail = 'slimchatuba@gmail.com';
+
 class SobreScreen extends StatelessWidget {
   const SobreScreen({super.key});
+
+  Future<void> _abrirEmail(BuildContext context) async {
+    final uri = Uri(
+      scheme: 'mailto',
+      path: _kContatoEmail,
+      query: 'subject=${Uri.encodeComponent('COCOS - Sugestão/Bug')}',
+    );
+    final abriu = await launchUrl(uri);
+    if (!abriu && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Não foi possível abrir o app de e-mail.')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +60,7 @@ class SobreScreen extends StatelessWidget {
               'O COCOS é um aplicativo de apoio à análise de solo voltado a quem trabalha direto na roça: '
               'o produtor mede parâmetros do solo com instrumentos simples de campo, insere os valores no '
               'app e recebe, na hora, a classificação de cada parâmetro (ideal, atenção ou crítico), uma '
-              'pontuação geral do solo e recomendações práticas de manejo — sem depender de enviar amostra '
+              'pontuação geral do solo e recomendações práticas de manejo, sem depender de enviar amostra '
               'para um laboratório para ter uma primeira leitura da situação do talhão.',
               style: TextStyle(fontSize: 13.5, color: AppColors.texto, height: 1.55),
             ),
@@ -54,7 +71,7 @@ class SobreScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '"COCOS" é a sigla de Código de Otimização das Características Orgânicas do Solo — o '
+                  '"COCOS" é a sigla de Código de Otimização das Características Orgânicas do Solo. O '
                   'nome resume exatamente a proposta do projeto: um código (um programa) que ajuda a '
                   'otimizar o manejo a partir das características orgânicas, químicas e físicas do solo.',
                   style: TextStyle(fontSize: 13.5, color: AppColors.texto, height: 1.55),
@@ -67,7 +84,7 @@ class SobreScreen extends StatelessWidget {
             child: const Text(
               'A ideia nasceu em 2023, durante o desenvolvimento de projetos para uma disciplina de '
               'Ciência de Dados. Surgiu a proposta de criar um código capaz de gerar um PDF com gráficos '
-              'sobre a condição do solo — um relatório completo, visual e fácil de entender, que reunisse '
+              'sobre a condição do solo: um relatório completo, visual e fácil de entender, que reunisse '
               'em um só documento a leitura de vários parâmetros e desse uma visão geral da saúde do '
               'terreno. Esse experimento acadêmico deu origem ao motor de classificação que hoje está por '
               'trás do COCOS, incluindo a própria função de gerar relatório completo em PDF disponível no '
@@ -86,13 +103,48 @@ class SobreScreen extends StatelessWidget {
             title: '🛠️ Como o app foi construído em Flutter',
             child: const Text(
               'A versão atual do COCOS foi reescrita em Flutter/Dart, o que permite manter uma única base '
-              'de código para Android e Web a partir dos mesmos arquivos-fonte. O motor de classificação — '
-              'que decide se um valor está ideal, em atenção ou crítico, calcula estatísticas de séries de '
-              'medições e o score geral do relatório — roda em Dart puro, direto no aparelho. O histórico e '
+              'de código para Android e Web a partir dos mesmos arquivos-fonte. O motor de classificação '
+              '(que decide se um valor está ideal, em atenção ou crítico, calcula estatísticas de séries de '
+              'medições e o score geral do relatório) roda em Dart puro, direto no aparelho. O histórico e '
               'os relatórios salvos ficam gravados localmente no dispositivo do usuário, e a geração do PDF '
               'do relatório completo usa as bibliotecas pdf e printing do ecossistema Flutter para montar o '
               'documento e abrir a tela de impressão/salvamento nativa do sistema.',
               style: TextStyle(fontSize: 13.5, color: AppColors.texto, height: 1.55),
+            ),
+          ),
+          AppCard(
+            title: '✉️ Contato',
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Encontrou um bug ou tem uma sugestão de melhoria? Manda um e-mail:',
+                  style: TextStyle(fontSize: 13.5, color: AppColors.texto, height: 1.55),
+                ),
+                const SizedBox(height: 10),
+                InkWell(
+                  borderRadius: BorderRadius.circular(10),
+                  onTap: () => _abrirEmail(context),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: AppColors.folhaPale,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: AppColors.folha.withValues(alpha: 0.27), width: 1.5),
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.email_outlined, size: 18, color: AppColors.folha),
+                        SizedBox(width: 8),
+                        Text(_kContatoEmail,
+                            style: TextStyle(
+                                fontSize: 13.5, fontWeight: FontWeight.w700, color: AppColors.folha)),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           AppCard(

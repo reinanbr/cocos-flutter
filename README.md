@@ -1,8 +1,8 @@
-# 🌱 COCOS — Análise de Solo
+# 🌱 COCOS - Análise de Solo
 
 Aplicativo Flutter para análise de solo direto na roça, usando apenas
 instrumentos simples e baratos (medidor de pH de bolso, condutivímetro,
-sonda de umidade/temperatura e o teste manual de textura) — sem depender de
+sonda de umidade/temperatura e o teste manual de textura), sem depender de
 laboratório ou de conexão com a internet.
 
 ## O que o app faz
@@ -24,22 +24,22 @@ atenção, ruim, muito ruim) e gera recomendações agronômicas específicas
 
 ### Funcionalidades
 
-- **📖 Manual de Coleta** — passo a passo de como medir cada parâmetro na roça.
-- **📍 Análise Única** — avalia um parâmetro isolado e mostra se está na faixa ideal.
-- **📊 Série de Valores** — compara múltiplas medições com estatísticas (média,
+- **📖 Manual de Coleta**: passo a passo de como medir cada parâmetro na roça.
+- **📍 Análise Única**: avalia um parâmetro isolado e mostra se está na faixa ideal.
+- **📊 Série de Valores**: compara múltiplas medições com estatísticas (média,
   desvio padrão, mediana, coeficiente de variação, tendência).
-- **📋 Relatório Completo** — analisa todos os parâmetros de uma vez, associados
+- **📋 Relatório Completo**: analisa todos os parâmetros de uma vez, associados
   a uma cultura e local, e gera um score geral de saúde do solo.
-- **⚖️ Comparar Parâmetros** — compara dois parâmetros lado a lado.
-- **🌡️ Dashboard** — resumo visual dos últimos relatórios salvos.
-- **📁 Histórico** — todas as análises salvas localmente no dispositivo.
-- **📄 Exportar PDF** — gera relatórios em PDF para compartilhar ou imprimir.
-- **ℹ️ Sobre** — informações e referências técnicas usadas nas classificações.
+- **⚖️ Comparar Parâmetros**: compara dois parâmetros lado a lado.
+- **🌡️ Dashboard**: resumo visual dos últimos relatórios salvos.
+- **📁 Histórico**: todas as análises salvas localmente no dispositivo.
+- **📄 Exportar PDF**: gera relatórios em PDF para compartilhar ou imprimir.
+- **ℹ️ Sobre**: informações e referências técnicas usadas nas classificações.
 
 ## Como funciona
 
 - Todo o processamento (classificação, estatísticas, score) roda **100% no
-  dispositivo**, sem servidor — pensado para uso a campo mesmo sem internet.
+  dispositivo**, sem servidor, pensado para uso a campo mesmo sem internet.
 - Os dados (histórico e relatórios) são persistidos localmente com
   `shared_preferences`.
 - Relatórios podem ser exportados em PDF com os pacotes `pdf` e `printing`.
@@ -47,10 +47,10 @@ atenção, ruim, muito ruim) e gera recomendações agronômicas específicas
 ## Stack técnica
 
 - [Flutter](https://flutter.dev/) / Dart
-- `shared_preferences` — persistência local
-- `pdf` + `printing` — geração e exportação de relatórios em PDF
-- `uuid`, `intl` — utilitários
-- `flutter_native_splash`, `flutter_launcher_icons` — splash screen e ícone do app
+- `shared_preferences`: persistência local
+- `pdf` + `printing`: geração e exportação de relatórios em PDF
+- `uuid`, `intl`: utilitários
+- `flutter_native_splash`, `flutter_launcher_icons`: splash screen e ícone do app
 
 ## Estrutura do projeto
 

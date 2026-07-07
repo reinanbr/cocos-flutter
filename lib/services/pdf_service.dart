@@ -19,13 +19,13 @@ PdfColor _pdfColor(Color c) => PdfColor.fromInt(c.toARGB32());
 
 /// Monta o PDF completo de um relatório de solo do COCOS: cabeçalho, score,
 /// resumo, tabela de parâmetros com barra de posição na escala e as
-/// recomendações de correção — o mesmo conteúdo mostrado na tela, pronto
+/// recomendações de correção, o mesmo conteúdo mostrado na tela, pronto
 /// para salvar, imprimir ou compartilhar.
 class PdfService {
   PdfService._();
 
-  /// Fontes com cobertura Unicode completa (acentos, travessão, meia-risca) —
-  /// as fontes padrão de PDF (Helvetica) não têm glifo para vários desses
+  /// Fontes com cobertura Unicode completa (acentos, travessão, meia-risca).
+  /// As fontes padrão de PDF (Helvetica) não têm glifo para vários desses
   /// caracteres e derrubam a renderização quando encontram um.
   static Future<pw.ThemeData> _loadTheme() async {
     final regularBytes = await rootBundle.load('assets/fonts/Roboto-Regular.ttf');
@@ -52,7 +52,7 @@ class PdfService {
             pw.Row(
               mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
               children: [
-                pw.Text('COCOS — Relatório de Análise de Solo',
+                pw.Text('COCOS - Relatório de Análise de Solo',
                     style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold, color: _terra)),
                 pw.Text('Página ${context.pageNumber}/${context.pagesCount}',
                     style: const pw.TextStyle(fontSize: 9, color: _textoSec)),
@@ -236,7 +236,7 @@ class PdfService {
 
   static String _fmt(double v) => v == v.roundToDouble() ? v.toInt().toString() : v.toString();
 
-  /// Remove o emoji/seta que prefixa os textos de recomendação — as fontes
+  /// Remove o emoji/seta que prefixa os textos de recomendação, pois as fontes
   /// padrão de PDF não têm glifos coloridos de emoji.
   static String _stripLeadingIcon(String text) {
     final idx = text.indexOf(' ');

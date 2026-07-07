@@ -22,7 +22,7 @@ final Map<ParamKey, ParamConfig> kParams = {
       'muito_baixo':
           'Solo fortemente ácido. Aplique calcário dolomítico (2 a 4 t/ha, a depender da CTC e do teor de alumínio trocável) '
           'de 60 a 90 dias antes do plantio, incorporando nos primeiros 20 cm do solo. O excesso de acidez libera alumínio '
-          'tóxico às raízes e bloqueia a absorção de fósforo, cálcio e magnésio — reavalie o pH após a calagem e, se possível, '
+          'tóxico às raízes e bloqueia a absorção de fósforo, cálcio e magnésio. Reavalie o pH após a calagem e, se possível, '
           'confirme a dose exata com uma análise de solo em laboratório (índice SMP ou saturação por bases).',
       'baixo':
           'Solo levemente ácido. Faça calagem de manutenção com calcário calcítico ou dolomítico (1 a 2 t/ha), preferindo '
@@ -39,7 +39,7 @@ final Map<ParamKey, ParamConfig> kParams = {
       'muito_alto':
           'pH muito alto (solo fortemente alcalino/sódico). Risco elevado de deficiência de ferro, manganês e zinco, com '
           'clorose visível nas folhas novas. Priorize enxofre elementar ou sulfato de alumínio para correção gradual e '
-          'busque orientação de um agrônomo — solos sódicos podem exigir gessagem associada à lixiviação.',
+          'busque orientação de um agrônomo. Solos sódicos podem exigir gessagem associada à lixiviação.',
     },
   ),
   ParamKey.condutividade: const ParamConfig(
@@ -60,14 +60,14 @@ final Map<ParamKey, ParamConfig> kParams = {
           'minerais disponíveis. Reforce a adubação (orgânica e mineral) de forma parcelada e reavalie a CE cerca de '
           '30 dias depois para acompanhar a resposta.',
       'baixo':
-          'CE abaixo do ideal — solo com baixa concentração de sais solúveis, o que geralmente acompanha baixa '
+          'CE abaixo do ideal: solo com baixa concentração de sais solúveis, o que geralmente acompanha baixa '
           'fertilidade. Aumente gradualmente a adubação de manutenção e evite depender só de fontes de baixa '
           'solubilidade.',
       'ideal':
           'Condutividade elétrica dentro da faixa segura (0,1–1,5 dS/m): há sais suficientes disponíveis às plantas '
           'sem risco de estresse osmótico. Mantenha o parcelamento atual da adubação.',
       'alto':
-          'CE elevada — sinal de acúmulo de sais no perfil, muitas vezes por excesso de adubação química ou água de '
+          'CE elevada: sinal de acúmulo de sais no perfil, muitas vezes por excesso de adubação química ou água de '
           'irrigação salina. Reduza fontes de fertilizante muito solúveis (como cloreto de potássio em excesso), '
           'melhore a drenagem da área e, se possível, faça uma lâmina de lixiviação com água de boa qualidade.',
       'muito_alto':
@@ -90,8 +90,8 @@ final Map<ParamKey, ParamConfig> kParams = {
     hint: 'Concentração de sais. Pode ser estimada com o mesmo condutivímetro '
         'de bolso (função TDS/salinidade). Valores altos prejudicam absorção de água.',
     recomendacoes: {
-      'muito_baixo': 'Salinidade muito baixa — solo adequado, sem risco de sais para as plantas. Nenhuma correção necessária.',
-      'baixo': 'Salinidade baixa — solo adequado. Mantenha o monitoramento de rotina, sobretudo se a irrigação usar água '
+      'muito_baixo': 'Salinidade muito baixa: solo adequado, sem risco de sais para as plantas. Nenhuma correção necessária.',
+      'baixo': 'Salinidade baixa: solo adequado. Mantenha o monitoramento de rotina, sobretudo se a irrigação usar água '
           'de poço ou reservatório com potencial salino.',
       'ideal': 'Salinidade dentro da faixa segura (até 0,5 g/L) para a maioria das culturas, inclusive as mais sensíveis '
           'a sais. Continue o manejo atual de adubação e irrigação.',
@@ -100,7 +100,7 @@ final Map<ParamKey, ParamConfig> kParams = {
           'prefira parcelar as aplicações em doses menores e mais frequentes, e melhore a drenagem para evitar acúmulo '
           'de sais na zona radicular.',
       'muito_alto':
-          'Solo hipersalino — risco severo de plasmólise (perda de água) nas raízes mesmo com umidade aparente no solo. '
+          'Solo hipersalino: risco severo de plasmólise (perda de água) nas raízes mesmo com umidade aparente no solo. '
           'Segundo a FAO/UNESCO (1988), esse nível compromete a maioria das culturas agrícolas. Faça lixiviação urgente '
           'com lâmina de água de boa qualidade, associe gesso agrícola para deslocar sódio e evite novas aplicações de '
           'fertilizantes salinos até a próxima medição confirmar a queda da salinidade.',
@@ -119,7 +119,7 @@ final Map<ParamKey, ParamConfig> kParams = {
     hint: 'Porcentagem de água no solo. Meça com um higrômetro/sonda de '
         'umidade de solo, cravada a 10–15 cm de profundidade.',
     recomendacoes: {
-      'muito_baixo': 'Solo muito seco. Irrigação urgente necessária — plantas já podem estar sob estresse hídrico visível '
+      'muito_baixo': 'Solo muito seco. Irrigação urgente necessária: plantas já podem estar sob estresse hídrico visível '
           '(murcha, folhas enroladas). Irrigue em lâmina adequada à cultura e, se possível, aplique cobertura morta '
           '(palhada) para reduzir a evaporação e manter a umidade por mais tempo.',
       'baixo': 'Umidade abaixo do ideal. Aumente a frequência ou o volume de irrigação, preferindo horários de menor '
@@ -127,7 +127,7 @@ final Map<ParamKey, ParamConfig> kParams = {
       'ideal': 'Umidade ideal (40–60%): boa disponibilidade de água para absorção de nutrientes e atividade microbiana '
           'sem excesso. Mantenha o manejo de irrigação atual.',
       'alto': 'Umidade elevada. Verifique se a drenagem da área está funcionando e reduza o volume/frequência de '
-          'irrigação — excesso de água por período prolongado favorece compactação e perda de nutrientes por '
+          'irrigação: excesso de água por período prolongado favorece compactação e perda de nutrientes por '
           'lixiviação.',
       'muito_alto':
           'Solo encharcado. Risco de hipóxia radicular (falta de oxigênio nas raízes) e proliferação de doenças '
@@ -150,7 +150,7 @@ final Map<ParamKey, ParamConfig> kParams = {
     recomendacoes: {
       'muito_baixo':
           'Solo muito frio. A atividade microbiana e a mineralização de nutrientes ficam praticamente paralisadas '
-          'nessa faixa. Evite semear ou transplantar agora — aguarde o aquecimento natural do solo ou, se possível, '
+          'nessa faixa. Evite semear ou transplantar agora, aguarde o aquecimento natural do solo ou, se possível, '
           'use cobertura plástica (mulching) para acelerar o ganho de temperatura.',
       'baixo': 'Solo frio. Germinação e crescimento radicular tendem a ficar mais lentos, prolongando o ciclo da '
           'cultura. Se a semeadura for urgente, prefira cultivares mais tolerantes a baixas temperaturas de solo.',
@@ -160,7 +160,7 @@ final Map<ParamKey, ParamConfig> kParams = {
       'alto': 'Solo quente. Aumente a irrigação (o efeito evaporativo ajuda a resfriar) e aplique cobertura morta para '
           'reduzir a incidência direta de sol sobre o solo, especialmente em horários de pico de calor.',
       'muito_alto':
-          'Solo muito quente — risco real de dano a raízes finas e redução da atividade microbiana benéfica. '
+          'Solo muito quente: risco real de dano a raízes finas e redução da atividade microbiana benéfica. '
           'Irrigue e cubra o solo com palhada urgentemente, e avalie sombreamento temporário em mudas ou plantas '
           'jovens mais sensíveis ao calor excessivo do solo.',
     },
@@ -176,10 +176,10 @@ final Map<ParamKey, ParamConfig> kParams = {
     step: 1,
     categoria: Categoria.fisico,
     hint: 'Percentual estimado de argila no solo. Estime pelo teste manual do '
-        'tato (bolinha/fita de solo úmido) — veja o passo a passo no Manual de Coleta.',
+        'tato (bolinha/fita de solo úmido). Veja o passo a passo no Manual de Coleta.',
     recomendacoes: {
       'muito_baixo':
-          'Solo muito arenoso (textura arenosa). Baixa capacidade de retenção de água e nutrientes — a adubação e a '
+          'Solo muito arenoso (textura arenosa). Baixa capacidade de retenção de água e nutrientes: a adubação e a '
           'irrigação tendem a se perder rápido por percolação. Incorpore matéria orgânica (composto, esterco curtido, '
           'palhada) regularmente para aumentar a CTC e a retenção hídrica, e prefira irrigações mais frequentes e com '
           'menor lâmina de cada vez.',

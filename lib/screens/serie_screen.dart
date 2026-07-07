@@ -74,7 +74,7 @@ class _SerieScreenState extends State<SerieScreen> {
       id: StorageService.genId(),
       data: DateTime.now().toIso8601String(),
       tipo: HistoricoTipo.serie,
-      titulo: '${resultado.emoji} ${resultado.nome} — ${resultado.n} medições (média ${resultado.mean})',
+      titulo: '${resultado.emoji} ${resultado.nome} · ${resultado.n} medições (média ${resultado.mean})',
       paramKey: _param!,
       media: resultado.mean,
       status: resultado.status,
@@ -106,7 +106,7 @@ class _SerieScreenState extends State<SerieScreen> {
                         style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w700, color: AppColors.terra)),
                     TextSpan(
-                        text: ' — ${info.unidade}',
+                        text: ' · ${info.unidade}',
                         style: const TextStyle(fontSize: 14, color: AppColors.textoSec)),
                   ])),
                   const SizedBox(height: 10),
